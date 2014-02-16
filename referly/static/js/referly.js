@@ -18,3 +18,21 @@ function createReferral(){
      });
      return false;
 }
+
+// remove referral via ajax request
+function removeReferral(referral_id){
+    var el = 'form#' + referral_id
+    var dataString = $(el).serializeArray();
+    $.ajax({
+        type: "DELETE",
+        url: "/apiv1/referral/" + referral_id,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("X-CSRFToken", dataString[0]['value']);
+        },
+        success: function(response) {
+            var old_el = '#id-' + referral_id
+            $(old_el).remove();
+        }
+     });
+     return false;
+}
