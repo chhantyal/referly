@@ -1,0 +1,20 @@
+[
+    {
+        "pk": 1,
+        "model": "users.User",
+        "fields": {
+            "username": "timlee",
+            "password": "password",
+            "email": "timlee@www.io"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "users.User",
+        "fields": {
+            "username": "narkumar",
+            "password": "password",
+            "email": "nar@refer.io"
+        }
+    }
+]

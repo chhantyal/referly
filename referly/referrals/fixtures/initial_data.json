@@ -1,0 +1,38 @@
+[
+    {
+        "pk": 1,
+        "model": "referrals.Referral",
+        "fields": {
+            "title": "World Wide Web",
+            "user": 1,
+            "slug": "www"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "referrals.Referral",
+        "fields": {
+            "title": "World Wide Web - Features",
+            "user": 1,
+            "slug": "www_features"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "referrals.Referral",
+        "fields": {
+            "title": "How it works",
+            "user": 1,
+            "slug": "www_how"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "referrals.Referral",
+        "fields": {
+            "title": "What is Referral",
+            "user": 2,
+            "slug": "what_is_referral"
+        }
+    }
+]
