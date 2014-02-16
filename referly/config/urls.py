@@ -31,4 +31,7 @@ urlpatterns = patterns('',
     # referrals app
     url(r'^referrals/', include("referrals.urls", namespace="referrals")),
 
+    # API
+    url(r'^apiv1/', include("apiv1.urls", namespace="apiv1")),
+
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
