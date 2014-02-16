@@ -5,7 +5,7 @@
         "fields": {
             "title": "World Wide Web",
             "user": 2,
-            "slug": "www"
+            "slug": "awesome-www"
         }
     },
     {
@@ -14,7 +14,7 @@
         "fields": {
             "title": "World Wide Web - Features",
             "user": 2,
-            "slug": "www_features"
+            "slug": "www-features"
         }
     },
     {
@@ -23,7 +23,7 @@
         "fields": {
             "title": "How it works",
             "user": 2,
-            "slug": "www_how"
+            "slug": "www-how-it-works"
         }
     },
     {
@@ -32,7 +32,7 @@
         "fields": {
             "title": "What is Referral",
             "user": 1,
-            "slug": "what_is_referral"
+            "slug": "what-is-referral"
         }
     }
 ]

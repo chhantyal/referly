@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import uuid
 
 from django.db import models, IntegrityError
@@ -26,5 +27,6 @@ class Referral(models.Model):
         """
         if not self.slug:
             # make it unique using uuid module
-            self.slug = slugify("{slug}-{uid}".format(slug=self.title, uid=str(uuid.uuid4())[:4]))
+            self.slug = slugify("{slug}-{uid}".format(slug=self.title,
+                                                    uid=unicode(uuid.uuid4())[:4]))
         super(Referral, self).save(*args, **kwargs)

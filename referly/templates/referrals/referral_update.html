@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} Edit Referral {% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Edit referral details</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <form role="form" enctype="multipart/form-data" action="{{ view.request.get_full_path }}" method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}

@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'^token/$', obtain_auth_token),
 
     # user API endpoint
-    url(r'^user/(?P<username>[\w-]+)$', UserRetriveAPIView.as_view(), name='api_user'),
+    url(r'^user/(?P<username>[\w-]+)/$', UserRetriveAPIView.as_view(), name='api_user'),
 
     # referrals API endpoint
     url(r'^referrals/$', ReferralListCreateAPIView.as_view(), name='api_referrals_list'),
