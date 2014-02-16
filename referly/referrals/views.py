@@ -9,7 +9,7 @@ from utils import get_object_or_none, SetupViewMixin
 
 from braces.views import LoginRequiredMixin
 
-class ReferralListView(LoginRequiredMixin, ListView):
+class ReferralListView(ListView):
     """
     View for list of referrals for current user.
     """
@@ -17,7 +17,9 @@ class ReferralListView(LoginRequiredMixin, ListView):
     context_object_name = 'referral_list'
 
     def get_queryset(self):
-        return self.request.user.referrals.all()
+        if self.request.user.is_authenticated():
+            return self.request.user.referrals.all()
+        return Referral.objects.all()
 
 
 class ReferralUpdateView(LoginRequiredMixin, UpdateView):
@@ -29,7 +31,7 @@ class ReferralUpdateView(LoginRequiredMixin, UpdateView):
     slug_url_kwarg = 'referral_id'
     form_class = ReferralUpdateForm
     template_name = 'referrals/referral_update.html'
-    success_url = reverse('referrals:referral_list')
+    success_url = reverse('dashboard')
 
 
 class LandingView(SetupViewMixin, TemplateView):
