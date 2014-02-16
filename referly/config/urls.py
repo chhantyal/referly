@@ -28,4 +28,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable avatars
     url(r'^avatar/', include('avatar.urls')),
 
+    # referrals app
+    url(r'^referrals/', include("referrals.urls", namespace="referrals")),
+
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
