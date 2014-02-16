@@ -35,10 +35,11 @@ For login:
 REST API
 --------
 
-``django rest framework`` is used for REST API.
+``django-rest-framework`` is used for REST API.
 
 1. ``/apiv1/referrals/`` - API endpoint for list of referrals. ``GET, POST, HEAD, OPTIONS`` are allowed http methods.
 
 2. ``/apiv1/referral/{{referral_id}}`` - API endpoint for particular referral. ``referral_id`` must
 provided. ``GET, PUT, PATCH, DELETE, HEAD, OPTIONS``` http methods are allowed.
+
 3. ``/apiv1/user/{{username}}``` - API endpoint for an user. ``GET, HEAD, OPTIONS`` are allowed.
