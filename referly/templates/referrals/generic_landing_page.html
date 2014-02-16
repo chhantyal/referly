@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %} World Wide Web is awesome {% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Welcome! Take a look into awesome World Wide Web</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="list-group">
+        {% if referral_id %}
+          {{ referral_id }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}
