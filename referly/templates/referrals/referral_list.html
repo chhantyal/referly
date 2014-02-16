@@ -9,6 +9,8 @@
   <div class="row">
     <div class="col-xs-12">
       <h1>Your referral dashboard</h1>
+      <p class="text-primary">You need to be logged in to add or make changes in referrals.</p>
+      <p>Use <code> username: 'timlee' password: 'timlee' </code> for test account.</p>
     </div>
   </div>
 
@@ -50,7 +52,7 @@
               <td>
                 <form  class="referral_form_remove" action="#" method="post" id="{{referral.slug}}">
                   {% csrf_token %}
-                  <input class="btn" type="submit" value="Delete"/>
+                  <input class="btn btn-danger" type="submit" value="Delete"/>
                 </form>
               </td>
             </tr>
