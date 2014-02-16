@@ -22,7 +22,7 @@ class Referral(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        When slug/referral_id is not given, slugfy title and save it as slug
+        When slug/referral_id is not given, slugfy title, make it unique and save it as slug
         """
         if not self.slug:
             # make it unique using uuid module
