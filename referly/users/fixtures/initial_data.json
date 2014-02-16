@@ -1,20 +1,56 @@
 [
-    {
-        "pk": 1,
-        "model": "users.User",
-        "fields": {
-            "username": "timlee",
-            "password": "password",
-            "email": "timlee@www.io"
-        }
-    },
-    {
-        "pk": 2,
-        "model": "users.User",
-        "fields": {
-            "username": "narkumar",
-            "password": "password",
-            "email": "nar@refer.io"
-        }
+{
+    "pk": 1,
+    "model": "users.user",
+    "fields": {
+        "username": "sudo",
+        "first_name": "Sudo",
+        "last_name": "User",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2014-02-16T19:52:48Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$1vMkJRMetvbf$F5IyvVQquC4TL9Y6cwqdVIsXPOi30h3j70W5Z2epNCU=",
+        "email": "nar.kumar@changer.nl",
+        "date_joined": "2014-02-16T19:52:07Z"
     }
+},
+{
+    "pk": 2,
+    "model": "users.user",
+    "fields": {
+        "username": "timlee",
+        "first_name": "Tim",
+        "last_name": "Lee",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": true,
+        "last_login": "2014-02-16T20:05:04Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "timlee",
+        "email": "timlee@www.io",
+        "date_joined": "2014-02-16T20:05:05Z"
+    }
+},
+{
+    "pk": 3,
+    "model": "users.user",
+    "fields": {
+        "username": "narkumar",
+        "first_name": "Neo",
+        "last_name": "Kumar",
+        "is_active": true,
+        "is_superuser": false,
+        "is_staff": true,
+        "last_login": "2014-02-16T20:05:37Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "narkumar",
+        "email": "neokya@gmail.com",
+        "date_joined": "2014-02-16T20:05:38Z"
+    }
+}
 ]

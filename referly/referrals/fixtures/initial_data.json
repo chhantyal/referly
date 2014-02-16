@@ -4,7 +4,7 @@
         "model": "referrals.Referral",
         "fields": {
             "title": "World Wide Web",
-            "user": 1,
+            "user": 2,
             "slug": "www"
         }
     },
@@ -13,7 +13,7 @@
         "model": "referrals.Referral",
         "fields": {
             "title": "World Wide Web - Features",
-            "user": 1,
+            "user": 2,
             "slug": "www_features"
         }
     },
@@ -22,7 +22,7 @@
         "model": "referrals.Referral",
         "fields": {
             "title": "How it works",
-            "user": 1,
+            "user": 2,
             "slug": "www_how"
         }
     },
@@ -31,7 +31,7 @@
         "model": "referrals.Referral",
         "fields": {
             "title": "What is Referral",
-            "user": 2,
+            "user": 1,
             "slug": "what_is_referral"
         }
     }

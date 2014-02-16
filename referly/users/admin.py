@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from django.contrib.auth.models import Group
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 from .models import User
