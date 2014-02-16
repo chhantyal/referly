@@ -7,7 +7,7 @@ django-secure==1.0
 django-cache-url==0.7.0
 dj-database-url==0.2.2
 dj-static==0.0.5
-ystache==0.5.3
+pystache==0.5.3
 
 # Forms
 django-braces==1.3.1
