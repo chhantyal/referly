@@ -1,8 +1,8 @@
 import uuid
-import datetime
 
 from django.db import models, IntegrityError
 from django.utils.text import slugify
+from django.utils import timezone
 
 
 class Referral(models.Model):
@@ -12,8 +12,8 @@ class Referral(models.Model):
     title = models.CharField(max_length=250)
     slug = models.CharField(unique=True, blank=True, max_length=250)
     user = models.ForeignKey('users.User', related_name='referrals')
-    date_created = models.DateTimeField(auto_now_add=True, default=datetime.datetime.now)
-    date_updated = models.DateTimeField(auto_now=True, default=datetime.datetime.now)
+    date_created = models.DateTimeField(auto_now_add=True, default=timezone.now())
+    date_updated = models.DateTimeField(auto_now=True, default=timezone.now())
     is_active = models.BooleanField(default=True)
     clicks = models.PositiveIntegerField(default=0)
 
