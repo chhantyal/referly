@@ -46,6 +46,7 @@ class Common(Configuration):
     LOCAL_APPS = (
         'users',  # custom users app
         'referrals',
+        'apiv1',
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

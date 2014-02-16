@@ -32,6 +32,7 @@ psycopg2==2.5.2
 unicode-slugify==0.1.1
 django-autoslug==1.7.2
 
-# Useful things
+# Others
 django-avatar==2.0
 ipython==1.0.0
+djangorestframework==2.3.12
