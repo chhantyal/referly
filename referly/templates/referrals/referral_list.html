@@ -68,7 +68,7 @@
 {% block javascript %}
   {{ block.super }}
   <script>
-    $('form#referral_create').on('submit', createReferral)
+    $('form#referral_create').on('submit', createReferral);
     $('.referral_form_remove').on('submit', function (e) {
       e.preventDefault();
       removeReferral(this.id);

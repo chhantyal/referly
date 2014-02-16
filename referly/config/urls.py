@@ -6,17 +6,18 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
+from referrals.views import LandingView
+
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$',
-        TemplateView.as_view(template_name='pages/home.html'),
-        name="home"),
+        TemplateView.as_view(template_name='pages/home.html'), name="home"),
+
     url(r'^about/$',
-        TemplateView.as_view(template_name='pages/about.html'),
-        name="about"),
+        TemplateView.as_view(template_name='pages/about.html'), name="about"),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
@@ -33,5 +34,8 @@ urlpatterns = patterns('',
 
     # API
     url(r'^apiv1/', include("apiv1.urls", namespace="apiv1")),
+
+    # landing page
+    url(r'^landing/$', LandingView.as_view(), name="landing"),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

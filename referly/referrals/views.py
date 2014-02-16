@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse_lazy as reverse
 
 from .models import Referral
 from .forms import ReferralUpdateForm
+from utils import get_object_or_none, SetupViewMixin
 
 from braces.views import LoginRequiredMixin
 
@@ -29,3 +30,30 @@ class ReferralUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ReferralUpdateForm
     template_name = 'referrals/referral_update.html'
     success_url = reverse('referrals:referral_list')
+
+
+class LandingView(SetupViewMixin, TemplateView):
+    """
+    View for generic landing page. If query parameter includes a referral code, referral click
+    count is increased by one.
+    """
+    template_name = 'referrals/generic_landing_page.html'
+
+    def setup(self, *args, **kwargs):
+        super(LandingView, self).setup(*args, **kwargs)
+        self.referral_id = self.request.GET.get('link')
+        self.referral_object = get_object_or_none(Referral, slug=self.referral_id)
+
+    def get(self, *args, **kwargs):
+        """
+        If query parameter is correct, increase the referral click
+        """
+        if self.referral_object:
+            self.referral_object.clicks += 1
+            self.referral_object.save()
+        return super(LandingView, self).get(*args, **kwargs)
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(LandingView, self).get_context_data(*args, **kwargs)
+        context['referral_id'] = self.referral_object
+        return context
