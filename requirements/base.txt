@@ -34,3 +34,4 @@ django-autoslug==1.7.2
 
 # Useful things
 django-avatar==2.0
+ipython==1.0.0
