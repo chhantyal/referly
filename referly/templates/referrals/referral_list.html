@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %} Referral List {% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Your referral dashboard</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-5">
+          <form method="post" id="referral_create" action="." class="add_email">
+            {% csrf_token %}
+            <div id="div_id_title" class="form-group">
+              <label for="id_title" class="control-label  requiredField">Title</label>
+              <div class="controls">
+                <input class="textinput textInput form-control" id="id_title" maxlength="250" name="title" type="text"/>
+              </div>
+            </div>
+              <button class="btn" id="submit_referral_create" name="action_add" type="submit">Add a referral</button>
+          </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="list-group">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th> Title </th>
+              <th> Referral ID </th>
+              <th> Clicks </th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for referral in referral_list %}
+            <tr id="id-{{ referral.slug }}">
+              <td>{{ referral.title }}</td>
+              <td>{{ referral.slug }}</td>
+              <td>{{ referral.clicks }}</td>
+              <td><a href="{% url 'referrals:referral_update' referral_id=referral.slug %}">Edit</a></td>
+              <td>
+                <form  class="referral_form_remove" action="#" method="post" id="{{referral.slug}}">
+                  {% csrf_token %}
+                  <input class="btn" type="submit" value="Delete"/>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+  {{ block.super }}
+  <script>
+    $('form#referral_create').on('submit', createReferral)
+    $('.referral_form_remove').on('submit', function (e) {
+      e.preventDefault();
+      removeReferral(this.id);
+    });
+  </script>
+{% endblock javascript %}
