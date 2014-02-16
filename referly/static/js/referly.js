@@ -10,7 +10,7 @@ function createReferral(){
         data: dataString,
         success: function(data) {
             console.log(data);
-            var html ='<tr><td>'+ data.title +'</td><td>'+ data.slug +'</td><td>'+ data.clicks +'</td><td><a href="#">Edit</a></td><td><a href="#">Delete</a></td></tr>';
+            var html ='<tr><td>'+ data.title +'</td><td>'+ data.slug +'</td><td>'+ data.clicks +'</td><td><a href="/referrals/'+ data.slug +'">Edit</a></td><td><input class="btn btn-danger" type="submit" value="Delete"/></td></tr>';
             $('.table tbody').append(html);
             var message_html = '<div class="alert alert-info"><a class="close" data-dismiss="alert">×</a><span>' + 'New referral added.' + '</span></div>'
             $('#messages').append(message_html);
