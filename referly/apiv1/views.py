@@ -5,7 +5,10 @@ from .serializers import UserSerializer, ReferralSerializer
 
 from rest_framework import generics
 
-class UserRetriveAPIView(generics.RetrieveAPIView):
+from braces.views import LoginRequiredMixin
+
+
+class UserRetriveAPIView(LoginRequiredMixin, generics.RetrieveAPIView):
     """
     API endpoint for an user and referrals.
     """
@@ -14,7 +17,7 @@ class UserRetriveAPIView(generics.RetrieveAPIView):
     lookup_field = 'username'
 
 
-class ReferralListCreateAPIView(generics.ListCreateAPIView):
+class ReferralListCreateAPIView(LoginRequiredMixin, generics.ListCreateAPIView):
     """
     API endpoint for referrals.
     """
@@ -25,7 +28,7 @@ class ReferralListCreateAPIView(generics.ListCreateAPIView):
         obj.user = self.request.user
 
 
-class ReferralRetreveUpdateAPIView(generics.RetrieveUpdateAPIView):
+class ReferralRetreveUpdateAPIView(LoginRequiredMixin, generics.RetrieveUpdateAPIView):
     """
     API endpoint for retreving and updating a referral. Referral unique id i.e slug should be
     provided.
@@ -35,7 +38,8 @@ class ReferralRetreveUpdateAPIView(generics.RetrieveUpdateAPIView):
     lookup_field = 'slug'
 
 
-class ReferralRetriveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+class ReferralRetriveUpdateDestroyAPIView(LoginRequiredMixin,
+                                    generics.RetrieveUpdateDestroyAPIView):
     """
     API endpoint for retreving and removing a referral. Referral unique id i.e slug should be
     provided.
