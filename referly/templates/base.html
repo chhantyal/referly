@@ -1,4 +1,5 @@
-{% load staticfiles i18n %}<!DOCTYPE html>
+{% load staticfiles i18n %}
+<!DOCTYPE html>
 <html lang="en" ng-app>
   <head>
     <meta charset="utf-8">
@@ -30,7 +31,7 @@
 
     <div class="header navbar">
       <div class="container">
-        <a class="navbar-brand" href="/">referly</a>
+        <a class="navbar-brand" href="/">Referly</a>
         <ul class="nav navbar-nav">
           <li><a href="{% url 'about' %}">About</a></li>
 
@@ -47,14 +48,16 @@
 
     <div class="container">
 
-      {% if messages %}
-          {% for message in messages %}
-              <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
-          {% endfor %}
-      {% endif %}
+      <div class="messages">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+      </div>
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+        <p>Welcome to Referly - an awesome referral app</p>
       {% endblock content %}
 
     </div> <!-- /container -->
