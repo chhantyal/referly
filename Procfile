@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath="$PWD/referly" config.wsgi:application

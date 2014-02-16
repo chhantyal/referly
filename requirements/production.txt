@@ -1,0 +1,4 @@
+# production requirements
+-r base.txt
+
+gunicorn==18.0
