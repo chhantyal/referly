@@ -40,12 +40,14 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
+        'rest_framework',
     )
 
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
         'referrals',
+        'apiv1',
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -215,8 +217,7 @@ class Common(Configuration):
 
     # Some really nice defaults
     ACCOUNT_AUTHENTICATION_METHOD = "username"
-    ACCOUNT_EMAIL_REQUIRED = True
-    ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+    ACCOUNT_EMAIL_REQUIRED = False
     ########## END AUTHENTICATION CONFIGURATION
 
     ########## Custom user app defaults
