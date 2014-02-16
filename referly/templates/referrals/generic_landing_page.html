@@ -8,15 +8,18 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Welcome! Take a look into awesome World Wide Web</h2>
+      <h2>Welcome! </h2>
+      <h2>Take a look into awesome World Wide Web</h2>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-12">
       <div class="list-group">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/d/d5/NOAA_Internet_example.png" class="img-responsive">
+        <br/>
         {% if referral_id %}
-          {{ referral_id }}
+          <p class="bg-info">Tracking ID: {{ referral_id }}</p>
         {% endif %}
       </div>
     </div>
