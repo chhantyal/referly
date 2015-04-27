@@ -1,7 +1,7 @@
 Referly
 ========
 
-An awesome referral app http://referly.herokuapp.com/
+An awesome referral app http://referly.herokuapp.com
 
 
 Developer Installation
